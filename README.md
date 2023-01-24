@@ -13,27 +13,19 @@ Finally, the password manager stores the password generation script - could be t
 
 So, in the end, a password manager would store:
 
-`google.com
-
-{user_id}
-
-loc: m/83696968'/20880'/231'/0/0
-
-Pattern: [BIP-39]-First 3 words-Capitalize word 1-Delimit with '^'
-
-ie: s/^(\w*?)\s(\w*?)\s(\w*).*/uc($1)^$2^$3/ge`
+    google.com
+    {user_id}
+    loc: m/83696968'/20880'/231'/0/0
+    Pattern: [BIP-39]-First 3 words-Capitalize word 1-Delimit with '^'
+    ie: s/^(\w*?)\s(\w*?)\s(\w*).*/uc($1)^$2^$3/ge
 
 Or
 
-`ebay.com
-
-{user_id}
-
-Loc: m/83696968'/20880'/9467'/0/0
-
-Pattern: [First 17 characters of pub key as Base58]-slice every 5 and delimit with '!' = 20 character pw
-
-ie: s/^(.{5})(.{5})(.{5})(.{2})/$1!$2!$3!$4/`
+    ebay.com
+    {user_id}
+    Loc: m/83696968'/20880'/9467'/0/0
+    Pattern: [First 17 characters of pub key as Base58]-slice every 5 and delimit with '!' = 20 character pw
+    ie: s/^(.{5})(.{5})(.{5})(.{2})/$1!$2!$3!$4/
 
 
 Then, a Hardware or other signing device could be sent either:
